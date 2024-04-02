@@ -2,7 +2,7 @@ from flask import Blueprint, render_template_string
 import pandas as pd
 
 # Create a Blueprint
-dataframe_bp = Blueprint('dataframe_bp', __name__)
+home_bp = Blueprint('home_bp', __name__)
 
 # Sample DataFrame
 data = {
