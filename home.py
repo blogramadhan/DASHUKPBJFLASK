@@ -12,7 +12,7 @@ data = {
 }
 df = pd.DataFrame(data)
 
-@dataframe_bp.route('/')
+@home_bp.route('/')
 def view_dataframe():
     # Convert DataFrame to HTML
     df_html = df.to_html(classes='table table-striped', index=False)
