@@ -2,7 +2,7 @@ from flask import Blueprint, render_template_string
 import pandas as pd
 
 # Create a Blueprint
-home_bp = Blueprint('home_bp', __name__)
+home = Blueprint("home", __name__)
 
 # Sample DataFrame
 data = {
@@ -12,7 +12,7 @@ data = {
 }
 df = pd.DataFrame(data)
 
-@home_bp.route('/')
+@home.route('/')
 def view_dataframe():
     # Convert DataFrame to HTML
     df_html = df.to_html(classes='table table-striped', index=False)
