@@ -1,0 +1,22 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from os import path
+from flask_login import LoginManager
+
+def create_app():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = "SIRUP"
+
+    from .home import home_bp
+    from .sirup import sirup_bp
+    from .spse import spse_bp
+    from .epurchasing import epurchasing_bp
+    from .monitoring import monitoring_bp
+
+    app.register_blueprint(home_bp, url_prefix="/")
+    app.register_blueprint(sirup_bp, url_prefix="/")
+    app.register_blueprint(spse_bp, url_prefix="/")
+    app.register_blueprint(epurchasing_bp, url_prefix="/")
+    app.register_blueprint(monitoring_bp, url_prefix="/")
+
+    return app
